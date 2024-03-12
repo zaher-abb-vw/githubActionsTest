@@ -1,6 +1,5 @@
 name : First Wrorkflow
-on:
-  push: [push]
+on: [push]
 
 
 jobs :
