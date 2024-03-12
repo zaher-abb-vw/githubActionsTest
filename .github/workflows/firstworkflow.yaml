@@ -25,4 +25,6 @@ jobs :
         run:  Write-Output "a windos a string"
       - name: echo a string
         run:  Write-Output "a windos a string"
+      - name: echo a string
+        run:  Write-Output "a windos a string"
 
