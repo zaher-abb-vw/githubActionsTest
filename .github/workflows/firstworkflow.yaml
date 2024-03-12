@@ -23,5 +23,4 @@ jobs :
     steps:
       - name: echo a string
         run:  Write-Output "a windos a string"
-      - name: faild step
-        run: faild
+
