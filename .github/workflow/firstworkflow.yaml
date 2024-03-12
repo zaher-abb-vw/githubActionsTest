@@ -1,0 +1,15 @@
+name : First Wrorkflow
+on:
+  push: [push]
+
+
+jobs :
+  run-shell-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo hello world
+        run: echo "Hello World"
+      - name: Multi line shell commands
+        run: |
+            node -v
+            npm -v
