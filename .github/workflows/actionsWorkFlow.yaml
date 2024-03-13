@@ -1,23 +1,14 @@
-#name: Simple Workflow
-#on: [push]
-#
-#jobs :
-#  Simple-Job:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: first JS Action
-#        id : id
-#        uses: actions/hello-world-javascript-action@v1
-#        with:
-#            who-to-greet: 'Zaher Abb'
-#      - name: Log
-#        run : echo "${{steps.id.outputs.time}}"
-name : checkout actions
+name: Simple Workflow
 on: [push]
+
 jobs :
-    checkout-actions-job:
-      runs-on: ubuntu-latest
-      steps:
-        - name: checkoutRepo
-          run:  ls -a
-          uses: actions/checkout@v4
+  Simple-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first JS Action
+        id : id
+        uses: actions/hello-world-javascript-action@v1
+        with:
+            who-to-greet: 'Zaher Abb'
+      - name: Log
+        run : echo "${{steps.id.outputs.time}}"

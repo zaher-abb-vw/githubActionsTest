@@ -1,0 +1,9 @@
+name : checkout actions
+on: [push]
+jobs :
+  checkout-actions-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkoutRepo
+        run:  ls -a
+        uses: actions/checkout@v4
