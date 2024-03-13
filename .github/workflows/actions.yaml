@@ -7,6 +7,7 @@ jobs:
       - name: list all files before checkout
         run: |
           echo $GITHUB_SHA
+          echo "testttttt"
           echo $GITHUB_REF
       - uses: actions/checkout@v4
 
