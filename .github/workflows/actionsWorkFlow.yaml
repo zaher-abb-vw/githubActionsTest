@@ -9,6 +9,6 @@ jobs :
         id : id
         uses: actions/hello-world-javascript-action@v1
         with:
-            who-to-greet: 'Zaher'
+            who-to-greet: 'Zaher Abb'
       - name: Log
         run : echo "${{steps.id.outputs.time}}"
