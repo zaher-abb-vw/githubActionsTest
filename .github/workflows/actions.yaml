@@ -8,6 +8,7 @@ jobs:
         run: |
           echo $GITHUB_SHA
           echo "testttttt"
+          echo "zaheer"
           echo $GITHUB_REF
       - uses: actions/checkout@v4
 
