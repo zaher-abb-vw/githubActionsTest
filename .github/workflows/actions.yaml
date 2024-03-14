@@ -1,5 +1,10 @@
 name: Repositort events
-on: [push, pull_request, issues]
+on:
+  push:
+  pull_request:
+    types: [ opened, synchronize, reopened, assigned ]
+  issues:
+    types: [ opened ]
 jobs:
   checkout-test:
     runs-on: ubuntu-latest
