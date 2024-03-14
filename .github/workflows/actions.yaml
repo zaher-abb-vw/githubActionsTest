@@ -1,6 +1,10 @@
 name: pull request comment
 on:
-  pull_request_target:
+  push:
+    branches:
+      - "!main"
+      - "feat/*"
+  pull_request:
     types: [ opened ]
 jobs:
   comment:
