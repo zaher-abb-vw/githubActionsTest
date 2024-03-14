@@ -1,32 +1,18 @@
 name: pull request comment
 on:
-  push:
-  pull_request_target:
-    types: [ opened]
   issues:
     types: [ opened ]
 jobs:
-  PR-commemnt:
+  comment:
     runs-on: ubuntu-latest
     steps:
-      - name: output comments
-        run: |
-          echo "SHA"
-          echo $GITHUB_SHA
-          echo "testttttt"
-          echo "zaheer"
-          echo "REF"          
-          echo $GITHUB_REF
-      - uses: actions/checkout@v4
-      - name: Comment on New PRs
-        uses: actions/github-script@v7
+      - uses: actions/github-script@v7
         with:
           script: |
-            console.log(github);
-            github.issues.createComment({
+            github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'Thanks for opening this pull request!'
-            });
+              body: '👋 Thanks for reporting!'
+            })
 
