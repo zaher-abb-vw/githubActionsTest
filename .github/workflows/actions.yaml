@@ -2,7 +2,6 @@ name: pull request comment
 on:
   push:
     branches:
-      - "!main"
       - "feat/*"
   pull_request:
     types: [ opened ]
