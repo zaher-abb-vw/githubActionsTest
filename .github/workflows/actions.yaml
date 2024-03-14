@@ -1,19 +1,31 @@
-name: Repositort events
+name: pull request comment
 on:
   push:
-  pull_request:
-    types: [ opened, synchronize, reopened, assigned ]
+  pull_request_target:
+    types: [ opened]
   issues:
     types: [ opened ]
 jobs:
-  checkout-test:
+  PR-commemnt:
     runs-on: ubuntu-latest
     steps:
-      - name: list all files before checkout
+      - name: output comments
         run: |
+          echo "SHA"
           echo $GITHUB_SHA
           echo "testttttt"
           echo "zaheer"
+          echo "REF"          
           echo $GITHUB_REF
       - uses: actions/checkout@v4
+      - name: Comment on New PRs
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Thanks for opening this pull request!'
+            });
 
