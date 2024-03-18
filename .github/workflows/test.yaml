@@ -1,10 +1,6 @@
 name: testtest Workflow
 on:
-  workflow_run:
-    workflows:
-      - pull request comment
-    types:
-      - completed
+ [push]
 
 jobs :
   Simple-Job:
