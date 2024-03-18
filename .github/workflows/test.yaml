@@ -1,0 +1,19 @@
+name: testtest Workflow
+on:
+  workflow_run:
+    workflows:
+      - pull request comment
+    types:
+      - completed
+
+jobs :
+  Simple-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first JS Action
+        id : id
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: 'Zaher Abb'
+      - name: Log
+        run : echo "${{steps.id.outputs.time}}"
