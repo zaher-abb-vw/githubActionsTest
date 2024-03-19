@@ -4,7 +4,6 @@ on:
     branches:
       - "feat/*"
 
-
 run-name: "Expressions and context by @${{ github.actor }}"
 jobs:
   Expressions:
@@ -32,5 +31,6 @@ jobs:
       - name: Expressions2
         id:  expressions2
         run: |
+          echo "NEW_EVENT_NAME=$(data)" >> "$GitHUB_ENV"
           echo "*************Github*****************"
           echo "test"
