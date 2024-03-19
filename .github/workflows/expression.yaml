@@ -10,8 +10,13 @@ jobs:
           - name: Expressions
             id:  expressions
             run: |
+                echo "*************Github*****************"
                 echo "${{ toJson(github) }}"
+                echo "*************Github*****************"
                 echo "${{ toJson(job) }}"
+                echo "*************Github*****************"
                 echo "${{ toJson(secrets) }}"
+                echo "*************Github*****************"
                 echo "${{ toJson(steps) }}"
+                echo "*************Github*****************"
                 echo "${{ toJson(runner) }}"
