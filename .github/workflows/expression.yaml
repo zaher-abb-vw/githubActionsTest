@@ -1,0 +1,17 @@
+name: Expressions and context
+on:
+  push:
+    branches:
+      - "feat/*"
+jobs:
+  Expressions:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Expressions
+            id:  expressions
+            run: |
+                echo "${{ toJson(github) }}"
+                echo "${{ toJson(job) }}"
+                echo "${{ toJson(secrets) }}"
+                echo "${{ toJson(steps) }}"
+                echo "${{ toJson(runner) }}"
