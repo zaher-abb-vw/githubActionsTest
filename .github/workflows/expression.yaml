@@ -31,6 +31,6 @@ jobs:
       - name: Expressions2
         id:  expressions2
         run: |
-          echo "NEW_EVENT_NAME=$RANDOM" >> "$GitHUB_ENV"
+          echo "NEW_EVENT_NAME = $(RANDOM)" >> "$GitHUB_ENV"
           echo "*************Github*****************"
           echo "test"
