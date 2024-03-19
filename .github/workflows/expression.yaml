@@ -5,7 +5,7 @@ on:
       - "feat/*"
 
 
-run-name: "Expressions and context by ${GITHUB_ACTOR}"
+run-name: "Expressions and context by @${{ github.actor }}"
 jobs:
   Expressions:
         runs-on: ubuntu-latest
