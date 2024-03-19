@@ -8,18 +8,29 @@ on:
 run-name: "Expressions and context by @${{ github.actor }}"
 jobs:
   Expressions:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Expressions
-            id:  expressions
-            run: |
-                echo "*************Github*****************"
-                echo "${{ toJson(github) }}"
-                echo "*************Github*****************"
-                echo "${{ toJson(job) }}"
-                echo "*************Github*****************"
-                echo "${{ toJson(secrets) }}"
-                echo "*************Github*****************"
-                echo "${{ toJson(steps) }}"
-                echo "*************Github*****************"
-                echo "${{ toJson(runner) }}"
+    runs-on: ubuntu-latest
+    if:   contains('["issues","pull_request"]', github.event_name)
+    steps:
+      - name: Expressions
+        id:  expressions
+        run: |
+          echo "*************Github*****************"
+          echo "${{ toJson(github) }}"
+          echo "*************Github*****************"
+          echo "${{ toJson(job) }}"
+          echo "*************Github*****************"
+          echo "${{ toJson(secrets) }}"
+          echo "*************Github*****************"
+          echo "${{ toJson(steps) }}"
+          echo "*************Github*****************"
+          echo "${{ toJson(runner) }}"
+
+  Expressions2:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - name: Expressions2
+        id:  expressions2
+        run: |
+          echo "*************Github*****************"
+          echo "test"
