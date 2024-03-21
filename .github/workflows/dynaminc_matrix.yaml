@@ -1,4 +1,4 @@
-name : Matrix
+name : DMatrix
 on:
   workflow_dispatch:
    inputs:
