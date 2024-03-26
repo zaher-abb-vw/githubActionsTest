@@ -1,0 +1,13 @@
+name: Caching and Artifacts
+on: [push]
+
+jobs:
+  use-axios :
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: install pip
+        run: pip --version
+
+
+
