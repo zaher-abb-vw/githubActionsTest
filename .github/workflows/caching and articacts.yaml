@@ -15,10 +15,4 @@ jobs:
           python -m pip install requests
       - name: Run Python script with requests
         run: |
-          python - <<EOF
-          import requests
-          
-          # Example: Make a GET request to a URL
-          response = requests.get('https://api.github.com')
-          print(response.json())
-          EOF  
+          python main.py  
