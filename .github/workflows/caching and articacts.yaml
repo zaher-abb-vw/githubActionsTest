@@ -6,8 +6,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: install pip
-        run: pip --version
-
-
-
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install requests library
+        run: |
+          python -m pip install requests
+            run: |
+            python - <<EOF
+            import requests
+            
+            # Example: Make a GET request to a URL
+            response = requests.get('https://api.github.com')
+            print(response.json())
+            EOF    
