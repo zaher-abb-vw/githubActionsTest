@@ -1,0 +1,22 @@
+name: Docker
+on : [push]
+
+jobs:
+  docker-job:
+    runs-on: ubuntu-latest
+    container:
+        image: python:3.8
+        env:
+          API_URL: "https://some-url.com"
+        ports:
+          - 80
+    steps:
+      - name: Log Python version
+        run: |
+          python --version
+      - name : update pip
+        run: |
+          python -m pip install --upgrade pip
+      - name: Log Env
+        run: |
+          echo $API_URL
