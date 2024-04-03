@@ -22,11 +22,11 @@ jobs:
           echo $API_URL
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Copy script into Docker container
-        run: docker cp ./script.sh :/
+
       - name: show all file in the directory
         run: |
           ls -la
+          pwd
       - name: run bash script
         uses: docker://python:3.8
         with:
