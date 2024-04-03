@@ -22,6 +22,9 @@ jobs:
           echo $API_URL
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: show all file in the directory
+        run: |
+          ls -la
       - name: run bash script
         uses: docker://python:3.8
         with:
