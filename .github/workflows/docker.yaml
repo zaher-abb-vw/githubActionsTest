@@ -29,5 +29,6 @@ jobs:
           pwd
       - name: run bash script
         uses: docker://python:3.8
-        run :
-          pwd
+        with:
+            entrypoint: /script.sh
+            args: 1 2 3
