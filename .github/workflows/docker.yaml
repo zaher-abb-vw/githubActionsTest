@@ -20,3 +20,10 @@ jobs:
       - name: Log Env
         run: |
           echo $API_URL
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: run bash script
+        uses: docker://python:3.8
+        with:
+          entrypoint: ./script.sh
+          args: "just some arguments"
